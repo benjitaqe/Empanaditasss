@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Empanadas Donde la ChicaSusan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Empanadas De la Chica</h1>
+
+  <div class="container">
+    <div class="producto">
+      <h2>Empanada Napolitana</h2>
+      <p>Deliciosa empanada con jamón, queso y tomate.</p>
+      <a class="boton" href="#" onclick="agregarAlCarrito('Napolitana', 'Frita')">Agregar al Carrito</a>
+    </div>
+
+    <div class="producto">
+      <h2>Empanada de Pino</h2>
+      <p>Tradicional empanada chilena de carne y cebolla.</p>
+      <label for="tipoPino">Tipo de Cocción:</label>
+      <select id="tipoPino">
+        <option value="Horno">Horno</option>
+        <option value="Frita">Frita</option>
+      </select>
+      <a class="boton" href="#" onclick="agregarEmpanadaPino()">Agregar al Carrito</a>
+    </div>
+
+    <div class="producto">
+      <h2>Empanada de Queso</h2>
+      <p>Clásica empanada rellena de queso fundido.</p>
+      <a class="boton" href="#" onclick="agregarAlCarrito('Queso', 'Frita')">Agregar al Carrito</a>
+    </div>
+  </div>
+
+  <div class="carrito">
+    <h2>Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p id="total-carrito"><strong>Total:</strong> $0</p>
+  </div>
+
+  <div class="pedido">
+    <h2>Finalizar Pedido</h2>
+    <input type="text" id="direccion" placeholder="Tu dirección" />
+    <p id="direccion-casa" style="display:none; color: #8a5a25;">
+      La dirección de la Casa es: <strong>Pasaje 47 Casa 2156</strong>
+    </p>
+
+    <select id="entrega" onchange="cambiarEntrega()">
+      <option value="Retiro en Casa">Retiro en Casa</option>
+      <option value="Despacho a Domicilio">Despacho a Domicilio</option>
+    </select>
+
+    <select id="pago">
+      <option value="Efectivo">Pago en Efectivo</option>
+      <option value="Transferencia">Transferencia</option>
+    </select>
+
+    <a class="boton" href="#" onclick="enviarPedido()">Enviar Pedido</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
